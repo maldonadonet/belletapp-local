@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Localización</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h1 text-center style="color:#fff">Localiza tu cliente</h1>
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+
+</ion-content>

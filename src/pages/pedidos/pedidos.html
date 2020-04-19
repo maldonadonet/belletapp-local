@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-buttons start>
+        <button color="light" ion-button icon-only start (click)="mostratMenu()">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    </ion-buttons>
+</ion-header>
+
+
+<ion-content>
+    <h1 text-center>Pedidos</h1>
+    <ion-card class="animated bounceInLeft">
+        <ion-card-header>
+            Listado de pedidos
+        </ion-card-header>
+
+        <ion-list>
+            <button ion-item *ngFor="let orden of _ps.ordenes" [navPush]="detallepage" [navParams]="{ orden:orden }">
+          <ion-icon name="cart" item-start></ion-icon>
+          <p>Fecha: </p>
+          <strong>{{ orden.Fecha_Pedido}}</strong>
+          <p>Cliente: </p>
+          <strong>{{ orden.id_cliente}}</strong>
+          <p> Total del pedido:</p>
+          <strong>$ {{ orden.total }}</strong>
+          <p>Pagos/Abonos:</p>
+          <strong>$ {{ orden.saldo }}</strong>
+          <p>Estado del pedido</p>
+          <strong id="estadopedido">{{ orden.estatus_pedido}}</strong>
+        </button>
+        </ion-list>
+    </ion-card>
+
+
+    <ion-fab right bottom>
+        <button ion-fab color="light" (click)="crear_pedido()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>
+<!-- <ion-footer color="danger" padding>
+    <button class="animated fadeInUp" ion-button block (click)="crear_pedido()">Agregar Pedido</button>
+</ion-footer> -->

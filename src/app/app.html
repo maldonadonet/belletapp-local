@@ -1,0 +1,37 @@
+<ion-menu [content]="content">
+    <ion-header>
+      <ion-toolbar>
+        <img src="https://rosariocostilla2020.files.wordpress.com/2015/04/banner1.jpg" alt="">
+        <ion-title>Bellet Cosmetics</ion-title>
+        <p>Menú principal de Categorías.</p>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <button ion-item (click)="openPage( pedidospage )">
+          <ion-icon name="pricetags"></ion-icon>
+          Pedidos
+        </button>
+        <button ion-item (click)="openPage( clientespage )">
+            <ion-icon name="people"></ion-icon>
+          Clientes
+        </button>
+        <button ion-item (click)="openPage( nosotrospage )">
+            <ion-icon name="archive"></ion-icon>
+            Geolocalizacion
+        </button>
+        <button ion-item (click)="openPage( contactopage )">
+            <ion-icon name="chatbubbles"></ion-icon>
+            Contacto
+        </button>
+        <button ion-item (click)="openPage( salirpage )">
+            <ion-icon name="exit"></ion-icon>  
+            Salir
+          </button>
+      </ion-list>
+    </ion-content>
+
+  </ion-menu>
+
+<ion-nav [root]="rootPage" #content></ion-nav>

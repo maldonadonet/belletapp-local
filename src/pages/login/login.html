@@ -1,0 +1,31 @@
+<ion-content>
+    <div class="container-fluid text-center animated zoomInLeft">
+        <img src="assets/imgs/logo-bellet.png" alt="" class="img-responsive">
+    </div>
+
+    <div class="text-center">
+        <h1 class="animated tada">Sistemas de pedidos Bellet</h1>
+    </div>
+    <div class="separador"></div>
+
+    <div class="container-fluid">
+        <ion-list class="animated zoomInRight contenedor">
+
+            <ion-item>
+                <!-- <ion-label fixed>Correo</ion-label> -->
+                <ion-input type="email" [(ngModel)]="email" class="entradas" placeholder="Correo electronico"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <!-- <ion-label fixed>Contraseña</ion-label> -->
+                <ion-input type="password" [(ngModel)]="password" class="entradas" placeholder="Contraseña"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <button ion-button block large color="fondo" [disabled]=" email.length < 5 || password.length < 5 " (click)="ingresar()">Iniciar</button>
+            </ion-item>
+
+        </ion-list>
+    </div>
+
+</ion-content>

@@ -1,0 +1,41 @@
+page-agregarpedido {
+    .container {
+        z-index: 5;
+    }
+    .container-header {
+        z-index: 5;
+    }
+    ion-input {
+        color: #fff;
+    }
+    ion-label {
+        color: #fff;
+    }
+    ion-content {
+        background: #356aa0;
+        /* Old browsers */
+        background: -moz-linear-gradient(-45deg, #356aa0 0%, #356aa0 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #356aa0 0%, #356aa0 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #356aa0 0%, #356aa0 100%);
+    }
+}
+
+.separador {
+    width: 80%;
+    height: 15px;
+    background: #000;
+}
+
+.title {
+    width: 100%;
+    text-align: center;
+    font-size: 1.4em;
+}
+
+ion-input {
+    color: #000;
+    border: 1px solid #000;
+    border-radius: 10px;
+}

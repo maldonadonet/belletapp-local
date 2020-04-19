@@ -1,0 +1,108 @@
+<ion-content>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 text-center" >
+                <h1 text-center style="color:#fff">Datos del Pedido</h1>
+                <button ion-button outline (click)="actualizar()" style="color:white">Actualizar datos</button>
+            </div>
+        </div>
+        <div class="separador"></div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <label class="title">Clientes</label>
+            </div>
+            <div class="col-8">
+                <div class="form-group">
+                    <select class="form-control" [(ngModel)]="clienteSeleccionado" (change)="obtener_cliente()">
+                        <option value="0">Clientes</option>
+                        <option *ngFor="let item of _ps.clientes" value="{{item.idcliente}}">
+                            {{ item.nombre }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <ion-grid class="container-header" padding>
+        <ion-row>
+            <ion-col col-md-12>
+                <h1 text-center style="color:#fff">Movimientos</h1>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>
+                <ion-label style="color:#fff">Productos</ion-label>
+                <ion-select [(ngModel)]="productoSeleccionado" (ionChange)="capturar_producto()">
+                    <!-- <ion-option value="0">Productos</ion-option> -->
+                    <ion-option *ngFor="let item of _ps.productos" value="{{item.idproducto}}">
+                      {{ item.descripcion }}
+                    </ion-option>
+                </ion-select>
+            </ion-col>
+            <!-- <ion-col col-4>
+                <ion-label style="color:#fff">Tipo Precio</ion-label>
+                <ion-select [(ngModel)]="tipo_precio" (ionChange)="capturar_tipoPrecio()">
+                    <ion-option value="1">Unitario</ion-option>
+                    <ion-option value="2">Distribuidor</ion-option>
+                    <ion-option value="3">Mayorista</ion-option>
+                </ion-select>
+            </ion-col> -->
+            <!-- <ion-col col-6>
+                <ion-label style="color:#fff">Color</ion-label>
+                <ion-input type="text" [(ngModel)]="color" (ionBlur)="capturar_producto()"></ion-input>
+            </ion-col> -->
+            <ion-col col-6>
+                <ion-label style="color:#fff">Colores</ion-label>
+                <ion-select [(ngModel)]="color" (ionBlur)="capturar_producto()">
+                    <!-- <ion-option value="0">Productos</ion-option> -->
+                    <ion-option *ngFor="let item of _ps.colores" value="{{item.color}}">
+                      {{ item.color }}
+                    </ion-option>
+                </ion-select>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>
+                <ion-label style="color:#fff">Cantidad</ion-label>
+                <ion-input type="text" [(ngModel)]="cantidad"></ion-input>
+            </ion-col>
+            <ion-col col-6>
+                <ion-label style="color:#fff">Precio</ion-label>
+                <ion-input type="text" [(ngModel)]="precio"></ion-input>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>
+                <ion-label style="color:#fff">Facturar</ion-label>
+                <ion-select [(ngModel)]="facturar" (ionChange)="capturar_facturar()">
+                    <ion-option value="si">Si</ion-option>
+                    <ion-option value="no">No</ion-option>
+                </ion-select>
+            </ion-col>
+            <ion-col col-6>
+                <ion-label style="color:#fff">Total</ion-label>
+                <ion-label>{{total}}</ion-label>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <button ion-button block (click)="agregar_movimiento()" color="secondary">Agregar Movimiento</button>
+            </div>
+            <div class="col-6">
+                <button ion-button block (click)="finalizar_pedido()" color="primary" [disabled]="!activo">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+</ion-content>
+<ion-footer>
+    <button ion-button block (click)="salir()">Cancelar</button>
+</ion-footer>

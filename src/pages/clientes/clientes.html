@@ -1,0 +1,45 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-buttons>
+            <button ion-button icon-only start (click)="mostratMenu()">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+            <button ion-button clear end (click)="actualizar()">
+              Actualizar datos
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <h1 text-center class="white">Listado de Clientes</h1>
+    <ion-card *ngFor="let cliente of _cs.clientes">
+        <ion-card-header>
+            Cliente: <strong>{{cliente.nombre}}</strong>
+        </ion-card-header>
+        <ion-list>
+            <ul>
+                <li>Dirección: <strong>{{cliente.direccion}}</strong></li>
+                <li>Empresa: <strong>{{cliente.empresa}}</strong></li>
+                <li>Sucursales: <strong>{{cliente.sucursales}}</strong></li>
+                <li>Telefono: <strong>{{cliente.telefono}}</strong></li>
+                <li>Email: <strong>{{cliente.email}}</strong></li>
+                <li>RFC: <strong>{{cliente.rfc}}</strong></li>
+                <li>Lat: <strong>{{cliente.lat}}</strong></li>
+                <li>Lng: <strong>{{cliente.lng}}</strong></li>
+            </ul>
+            <a ion-button block href="https://maps.google.com/?q={{cliente.lat}},{{cliente.lng}}">Mostrar Ubicacion</a>
+            <!-- <button ion-button block [navPush]="detallecliente" [navParams]="{ cliente:cliente }">Mapa</button> -->
+        </ion-list>
+    </ion-card>
+
+    <ion-fab right bottom>
+        <button ion-fab color="light" (click)="agregar_cliente()">
+            <ion-icon name="person-add"></ion-icon>
+        </button>
+    </ion-fab>
+
+</ion-content>

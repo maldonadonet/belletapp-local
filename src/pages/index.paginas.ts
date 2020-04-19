@@ -1,0 +1,10 @@
+export { ClientesPage } from './clientes/clientes'
+export { ContactoPage } from './contacto/contacto'
+export { DetallePedidosPage } from './detalle-pedidos/detalle-pedidos'
+export { LoginPage } from './login/login'
+export { NosotrosPage } from './nosotros/nosotros'
+export { PedidosPage } from './pedidos/pedidos'
+export { SalirPage } from './salir/salir';
+export { DetalleClientePage } from './detalle-cliente/detalle-cliente'
+export { AgregarpedidoPage } from './agregarpedido/agregarpedido';
+export { AddClientesPage } from './add-clientes/add-clientes';

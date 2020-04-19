@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Agregar Cliente</ion-title>
+        <button  ion-button left (click)="dismiss()">Cerrar</button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list>
+        <ion-item text-center>
+            <ion-label>Formulario de registros</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Nombre</ion-label>
+            <ion-input type="text" placeholder="Nombre Completo" [(ngModel)]="nombre"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Dirección</ion-label>
+            <ion-input type="text" placeholder="Dirección completa" [(ngModel)]="direccion"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Empresa</ion-label>
+            <ion-input type="text" placeholder="Razon social de la Empresa" [(ngModel)]="empresa"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>No. de Sucursales</ion-label>
+            <ion-input type="numeric" placeholder="Numero de Sucursales" [(ngModel)]="sucursales"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Telefono Cel</ion-label>
+            <ion-input type="tel" placeholder="Telefono" [(ngModel)]="telefono"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Email</ion-label>
+            <ion-input type="email" placeholder="Correo Electronico" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>RFC</ion-label>
+            <ion-input type="text" placeholder="RFC" [(ngModel)]="rfc"></ion-input>
+        </ion-item>
+        <ion-item>
+            <button ion-button block (click)="enviar_cliente()" [disabled]="nombre.length < 3 || direccion.length < 3 || empresa.length < 4 || sucursales.length < 1 || telefono.length < 1">Enviar</button>
+        </ion-item>
+    </ion-list>
+
+
+</ion-content>

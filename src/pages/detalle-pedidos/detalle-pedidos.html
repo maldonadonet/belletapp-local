@@ -1,0 +1,67 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Detalle del Pedido</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item class="animated bounceInLeft" style="margin-bottom:10px">
+             <!-- <div class="animated fadeInRightBig">
+                <p><strong>Producto:</strong> {{ item.descripcion}}</p>
+                <p><strong>Cantidad:</strong> {{item.cantidad}} </p>
+                <p><strong>Precio:</strong> $ {{ item.precio }} </p>
+                <p><strong>Color:</strong> {{item.color}}</p>
+            </div> -->
+            <ion-list>
+                  <ion-item *ngFor="let item of orden.detalle">
+                        <p><strong>Producto:</strong> {{ item.descripcion}}</p>
+                        <p><strong>Cantidad:</strong> {{item.cantidad}} </p>
+                        <p><strong>Precio:</strong> $ {{ item.precio }} </p>
+                        <p><strong>Color:</strong> {{item.color}}</p>
+                        <p><strong>Total:</strong> {{item.total}}</p>
+                        <p>---------------------------------------</p>
+                  </ion-item>
+                  <p>Pagos restantes: {{ orden.total - orden.saldo }}</p>
+
+                  <div *ngIf="orden.total > orden.saldo">
+                        <button ion-button full (click)="cerrar_pedido(orden.id_pedido)">
+                              Agregar pago
+                        </button>
+                  </div>
+
+            </ion-list>
+            <!-- <div class="animated fadeInRightBig">
+                <p><strong>Producto:</strong> {{ item.descripcion}}</p>
+                <p><strong>Cantidad:</strong> {{item.cantidad}} </p>
+                <p><strong>Numero de nota:</strong> {{item.num_nota}}</p>
+                <p><strong>Forma de pago:</strong> {{item.tipo_pago}}</p>
+                <p><strong>Precio:</strong> $ {{ item.precio }} </p>
+                <p><strong>Requiere factura:</strong> {{item.factura}}</p>
+                <p><strong>Color:</strong> {{item.color}}</p>
+                <p><span style="color:#000">Total del pedido:</span><strong style="color:#000; font-weight: 800">$ {{item.total}}.00</strong></p>
+                <p class="bg-blue"><strong style="color:#000">Pago Realizado:</strong>
+                    <strong *ngIf="item.pago" style="color:#fff">
+                          &#32;${{item.pago}}.00
+                        </strong>
+                    <strong style="color:#fff" *ngIf="item.pago == 0">
+                          &#32;$0.00
+                        </strong>
+                </p>
+                <p class="bg-red-t"><strong style="color:#000">Adeudo:</strong> <span>{{ item.total - item.pago}}</span></p>
+                <p>Estado del Pedido: <strong>{{ item.estatus }}</strong></p>
+                <div *ngIf="item.estatus != 'Pagado'">
+                    <button ion-button full (click)="cerrar_pedido(item.id_detalle)">
+                                Agregar pago
+                            </button>
+                </div>
+            </div> -->
+        </ion-item>
+    </ion-list>
+
+</ion-content>
+<ion-footer color="danger">
+    <ion-toolbar>
+        <ion-title text-center>Bellet Cosmeticos</ion-title>
+    </ion-toolbar>
+</ion-footer>
